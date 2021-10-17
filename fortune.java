@@ -9,7 +9,7 @@ public class fortune {
         System.out.println("normal");
       case 4:
       case 5:
-        System.out.println("baaaad");
+        System.out.println("bad");
     }
   }
 }
