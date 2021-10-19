@@ -3,10 +3,10 @@ package pr1_blatt1;
 public class Umwandlung {
   public static void main(String[] args) {
     int num1 = 80;
-    int num2 = Integer.parseInt("1110010",2);
+    int num2 = (byte)0b1110010;
     int num3 = 111;
-    int num4 = Integer.parseInt("67",16);//67(Hex)=103
-    int num5 = Integer.parseInt("61",8);//61(Oct)=49
+    int num4 = 0x67;
+    int num5 = 061;
 
     char a  = (char)num1;
     char b  = (char)num2;

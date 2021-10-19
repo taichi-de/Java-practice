@@ -1,16 +1,17 @@
 package pr1_blatt1;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class VATCalculator {
-  private static double getPrice(){
+  private static int getPrice(){
     System.out.println("Bitte Bruttobetrag in ganzen Euro eingeben: ");
-    return (new Scanner(System.in)).nextDouble();
+    return (new Scanner(System.in)).nextInt();
   }
 
   public static void main(String[] args) {
-    double euro = getPrice();
-    System.out.println("Dein Nettobetrag ist: " + (double)(euro * (100.0-16.0)/100.0) + " €");
-    // System.out.println("Dein Nettobetrag ist: " + euro * (100-19)/100 + " €");
+    int euro = getPrice();
+    System.out.println("Dein Nettobetrag ist: " + euro * 1.16 + " €");
+    System.out.println("Dein Nettobetrag ist: " + euro * 1.19 + " €");
+
   }
 }
