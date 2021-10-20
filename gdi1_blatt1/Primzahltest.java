@@ -14,22 +14,22 @@ class Prim{
     int prim;
   public void testePrim(){
 
-       Scanner s = new Scanner(System.in);
-       System.out.println("Geben Sie eine Zahl ein: ");
-       prim = s.nextInt();
-       boolean isprim = true;
+    Scanner s = new Scanner(System.in);
+    System.out.println("Geben Sie eine Zahl ein: ");
+    prim = s.nextInt();
+    boolean isPrim = true;
 
     if(prim == 1) {
       System.out.println(prim + " ist per Definition keine Primzahl.");
-      isprim = false;
+      isPrim = false;
    }
 
-   for(int i = 2; i <= Math.sqrt(prim); i++) {
+   for(int i = 2; i <= Math.sqrt(prim); i++) { //sqrt: squarer root
         if(prim % i != 0) {
-            isprim = true;
+            isPrim = true;
        }else if(prim % i == 0) {
            System.out.println(prim + " ist keine Primzahl");
-           isprim = false;
+           isPrim = false;
            break;
        }else {
            System.out.println("Fehler!");
@@ -37,7 +37,7 @@ class Prim{
      }
  }
 
-  if(isprim == true) {
+  if(isPrim == true) {
       System.out.println(prim + " ist eine Primzahl!");
      }
   }
