@@ -2,20 +2,22 @@ package pr1_blatt2;
 
 public class XmasTreePrinter {
   public static void main(String[] args) {
-    int rows = 5, k = 0;
+    // h: Höhe, i: Zeile, j: *, space: Lücke, g: Lücke(für #)
+    int h = 4, j = 0;
 
-    for (int i = 1; i <= rows; ++i, k = 0) {
-      for (int space = 1; space <= rows - i; space++) {
+    for (int i = 1; i <= h; ++i, j = 0) {
+      for (int space = 1; space <= h - i; ++space) {
         System.out.print(" ");
       }
-
-      while (k != 2 * i - 1) {
+      while (j != 2 * i - 1) {
         System.out.print("*");
-        ++k;
+        ++j;
       }
-
       System.out.println();
     }
-    System.out.println(rows/2 + "#");
+    for (int g = 1; g <= h - 1; g++) {
+      System.out.print(" ");
+    }
+    System.out.println("#");
   }
 }
