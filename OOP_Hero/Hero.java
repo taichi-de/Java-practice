@@ -33,7 +33,13 @@ public class Hero extends Character{
   public String getName(){
     return this.name;
   }
-  public String setName(String name){
+  public void setName(String name){
+    if(name == null){
+      throw new IllegalArgumentException("name is null");
+    }
+    if(name.length() >= 8){
+      throw new IllegalArgumentException("Too long");
+    }
     this.name = name;
   }
 
