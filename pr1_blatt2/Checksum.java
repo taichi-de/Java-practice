@@ -8,9 +8,9 @@ public class Checksum {
     do {
       input = System.in.read();
       if (input >=48 && input < 58) {
-        zahl = Integer.parseInt(String.valueOf(Character.toChars(input)));
+        zahl = Integer.parseInt(String.valueOf(Character.toChars(input))); // den integer -> in char -> in nen strintg -> nen int
         System.out.print(zahl);
-        summe = summe + zahl;
+        summe += zahl;
       }
     }
     while (input >=48 && input < 58);

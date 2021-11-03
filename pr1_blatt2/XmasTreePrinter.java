@@ -15,7 +15,7 @@ public class XmasTreePrinter {
       }
       System.out.println();
     }
-    for (int g = 1; g <= h - 1; g++) {
+    for (int g = 1; g <= h - 1; ++g) {
       System.out.print(" ");
     }
     System.out.println("#");
