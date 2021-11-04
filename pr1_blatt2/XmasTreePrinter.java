@@ -3,7 +3,7 @@ package pr1_blatt2;
 public class XmasTreePrinter {
   public static void main(String[] args) {
     // h: Höhe, i: Zeile, j: *, space: Lücke, g: Lücke(für #)
-    int h = 4, j = 0;
+    int h = 10, j = 0;
 
     for (int i = 1; i <= h; ++i, j = 0) {
       for (int space = 1; space <= h - i; ++space) {
