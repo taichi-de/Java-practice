@@ -8,12 +8,12 @@ public class Checksum {
     do {
       input = System.in.read();
       if (input >=48 && input < 58) {
-        zahl = Integer.parseInt(String.valueOf(Character.toChars(input))); // den integer -> in char -> in nen strintg -> nen int
-        System.out.print(zahl);
-        summe += zahl;
+        // zahl = Integer.parseInt(String.valueOf(Character.toChars(input))); // den integer -> in char -> in nen strintg -> nen int
+        System.out.print(input);
+        // System.out.print(zahl);
+        // summe += zahl;
       }
-    }
-    while (input >=48 && input < 58);
+    }while (input >=48 && input < 58);
     System.out.println("\nDie Quersumme ist: " + summe);
   }
 }
