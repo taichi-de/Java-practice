@@ -1,5 +1,5 @@
 package pr1_blatt3;
 
-public class Mountain {
+public class Afgb4 {
 
 }

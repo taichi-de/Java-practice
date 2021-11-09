@@ -1,6 +1,6 @@
 package pr1_blatt3;
 
-public class DuplicateArray {
+public class Afgb3 {
   // int[] beforeArr = {10, 20, 44, 10, 1, 1, 10, 4, 11, 45, 8};
   // int[] AfterArr = null;
 
