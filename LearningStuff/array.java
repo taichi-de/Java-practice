@@ -1,3 +1,4 @@
+package LearningStuff;
 public class array {
   public static void main(String[] args) {
     // int[] scores = new int[5];

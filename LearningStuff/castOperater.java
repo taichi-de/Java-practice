@@ -1,3 +1,4 @@
+package LearningStuff;
 public class castOperater {
   public static void main(String[] args){
     int age = (int)3.2;

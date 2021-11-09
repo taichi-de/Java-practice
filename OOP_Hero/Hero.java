@@ -71,5 +71,10 @@ public class Hero extends Character{
       ch.hp += 50;
     }
   }
+  @Override
+  public void attack(Metango m) {
+    // TODO Auto-generated method stub
+
+  }
 
 }

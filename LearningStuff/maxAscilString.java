@@ -1,3 +1,4 @@
+package LearningStuff;
 import java.util.Arrays;
 import java.util.function.*;
 

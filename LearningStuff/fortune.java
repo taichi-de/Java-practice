@@ -1,3 +1,4 @@
+package LearningStuff;
 public class fortune {
   public static void main(String[] args){
     int fortune = new java.util.Random().nextInt(5) + 1;
