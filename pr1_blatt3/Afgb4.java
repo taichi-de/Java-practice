@@ -5,9 +5,9 @@ public class Afgb4 {
     int[] arr = new int[]{0, 1, 2, 3, 3, 3, 4, 4, 5, 6, 7, 6, 5, 5, 5, 4, 3, 2, 1, 0};
     int top = 0;
 
-    for(int i = 0; i < arr.length; i++){
-      if(top < arr[i]){
-        top = arr[i];
+    for(int h = 0; h < arr.length; h++){
+      if(top < arr[h]){
+        top = arr[h];
       }
     }
 
@@ -19,19 +19,19 @@ public class Afgb4 {
       }
     }
 
-    for(int i = 0; i < arr.length; i++){
+    for(int k = 0; k < arr.length; k++){
       char symbol =  '-';
-      if(i != arr.length-1){
-        if(i != 0 && arr[i]>arr[i-1] && arr[i]>arr[i+1])
+      if(k != arr.length-1){
+        if(arr[k]==top)
           symbol = '^';
-        else if(arr[i]<arr[i+1])
+        else if(arr[k]<arr[k+1])
           symbol =  '/';
-        else if(arr[i]==arr[i+1] || arr[i]==arr[arr.length-1])
+        else if(arr[k]==arr[k+1] || arr[k]==arr[arr.length-1])
           symbol = '-';
-        else if(arr[i]>arr[i+1])
+        else if(arr[k]>arr[k+1])
           symbol = '\\';
       }
-      mountain[i][arr[i]] = symbol;
+      mountain[k][arr[k]] = symbol;
     }
 
     for(int j = mountain[0].length-1; j >= 0; j--){

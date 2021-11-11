@@ -4,7 +4,6 @@ public class Afgb3 {
   public static void main(String[] args){
     int[] arr = new int[]{1, 1, 3, 7, 7, 8, 9, 9, 9, 10};
     int current = arr[0];
-    boolean found = false;
 
     // Original array:
     for(int i = 0; i < arr.length; i++)
@@ -12,13 +11,10 @@ public class Afgb3 {
     System.out.println();
 
     // Array without duplicates:
-    for (int i = 0; i < arr.length; i++) {
-      if (current == arr[i] && !found) {
-        found = true;
-      } else if (current != arr[i]) {
+    for (int j = 0; j < arr.length; j++) {
+      if (current != arr[j]) {
         System.out.print(current + ", ");
-        current = arr[i];
-        found = false;
+        current = arr[j];
       }
     }
     System.out.println(current);
