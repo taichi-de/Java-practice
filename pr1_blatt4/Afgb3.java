@@ -6,7 +6,7 @@ public class Afgb3 {
     plaintext = plaintext.toLowerCase();
     for(int i=0; i<plaintext.length(); i++){
       char next = plaintext.charAt(i);
-      ciphertext = ciphertext + shift(next, key);
+      ciphertext += shift(next, key);
     }
     return ciphertext;
   }
@@ -26,7 +26,7 @@ public class Afgb3 {
     ciphertext = ciphertext.toLowerCase();
     for(int i=0; i<ciphertext.length(); i++){
       char next = ciphertext.charAt(i);
-      decoded = decoded + shift(next, 26-key);
+      decoded += shift(next, 26-key);
     }
     return decoded;
   }
