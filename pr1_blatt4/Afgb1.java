@@ -7,6 +7,9 @@ public class Afgb1 {
     else {
       for(int i = 2; i <= n; i++){
         fact *= i;
+        // if (fact <0){
+        //   return Integer.MAX_VALUE;
+        // }
       }
     }
     return fact;

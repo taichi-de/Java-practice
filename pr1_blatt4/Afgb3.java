@@ -3,7 +3,7 @@ package pr1_blatt4;
 public class Afgb3 {
   public static String code(String plaintext, int key){
     String ciphertext = "";
-    plaintext = plaintext.toLowerCase();
+    // plaintext = plaintext.toLowerCase();
     for(int i=0; i<plaintext.length(); i++){
       char next = plaintext.charAt(i);
       ciphertext += shift(next, key);
@@ -17,13 +17,20 @@ public class Afgb3 {
       while(letter > 'z'){
         letter -= 26;
       }
+    }else if('A'<=letter && letter <='Z'){
+      letter += shift;
+      while(letter > 'Z'){
+        letter -= 26;
+      }
+    }else{
+      letter = ' ';
     }
     return letter;
   }
 
   public static String decode(String ciphertext, int key){
     String decoded = "";
-    ciphertext = ciphertext.toLowerCase();
+    // ciphertext = ciphertext.toLowerCase();
     for(int i=0; i<ciphertext.length(); i++){
       char next = ciphertext.charAt(i);
       decoded += shift(next, 26-key);
@@ -31,7 +38,7 @@ public class Afgb3 {
     return decoded;
   }
   public static void main(String[] args) {
-    String plaintext = "Uheen qre Pbqr shaxgvbavreg";
+    String plaintext = "Uheen.qre Pbqr shaxgvbavreg";
     int key = 13;
 
     String ciphertext = code(plaintext, key);

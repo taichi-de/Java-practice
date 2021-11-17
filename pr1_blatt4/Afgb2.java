@@ -26,6 +26,7 @@ public class Afgb2 {
   }
 
 	public static boolean isSmallStraight(int[] diceRolls) {
+    //diceRolls = removeDuplicates(diceRolls);
     if(diceRolls[0] == 1 && diceRolls[1] == 2 && diceRolls[2] == 3 && diceRolls[3] == 4)
       return true;
     else if(diceRolls[1] == 2 && diceRolls[2] == 3 && diceRolls[3] == 4 && diceRolls[4] == 5)
