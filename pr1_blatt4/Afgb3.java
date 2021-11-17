@@ -12,7 +12,7 @@ public class Afgb3 {
   }
 
   public static char shift(char letter, int shift){
-    if(letter>='a' && letter <='z'){
+    if('a'<=letter && letter <='z'){
       letter += shift;
       while(letter > 'z'){
         letter -= 26;
@@ -35,9 +35,9 @@ public class Afgb3 {
     int key = 13;
 
     String ciphertext = code(plaintext, key);
-    System.out.println("Klartext: " + plaintext + " ---> " + ciphertext);
+    System.out.println("Klartext: " + plaintext + " --> " + ciphertext);
 
     String decoded = decode(ciphertext, key);
-    System.out.println("Geheimtext: " + ciphertext + " ---> " + decoded);
+    System.out.println("Geheimtext: " + ciphertext + " --> " + decoded);
   }
 }

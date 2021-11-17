@@ -22,7 +22,6 @@ public class test3 {
 				if (offset == 'z') {
 					array[i] = (char) (offset);
 				}
-
 			} else if (array[i] >= 'A' && array[i] <= 'Z') {
 				if (offset > 'Z') {
 					array[i] = (char) (offset - 26);
@@ -35,7 +34,6 @@ public class test3 {
 				}
 			} else
 				array[i] = ' ';
-
 		}
 		return array;
 	}
@@ -53,7 +51,6 @@ public class test3 {
 				if (offset == 'a') {
 					array[i] = (char) (offset);
 				}
-
 			} else if (array[i] >= 'A' && array[i] <= 'Z') {
 				if (offset > 'A') {
 					array[i] = (char) (offset);
@@ -74,13 +71,13 @@ public class test3 {
 		char[] i2 = "abcd".toCharArray();
 		char[] input = "Uheen qre Pbqr shaxgvbavreg".toCharArray();
 
-		System.out.println("Code: " );
+		System.out.print("Code: " );
 		printArray(input);
 
-		System.out.println("Entschl�sseln: ");
+		System.out.print("Entschl�sseln: ");
 		printArray(decode(input, 13));
 
-		System.out.println("Verschl�sseln: ");
+		System.out.print("Verschl�sseln: ");
 		printArray(encode(i2, 13));
 	}
 }
