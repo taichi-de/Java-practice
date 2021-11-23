@@ -15,6 +15,6 @@ public class Afgb1 {
     return fact;
   }
   public static void main(String[] args) {
-    System.out.println(factorialUsingRecursion(255)); // n<=20 ok
+    System.out.println(factorialUsingRecursion(14)); // n<=20 ok
   }
 }
