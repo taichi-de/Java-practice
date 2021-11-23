@@ -1,9 +1,16 @@
 package pr1_blatt5;
 
-public class Afgb1 {
-  public static boolean isPalindrom(String text){
+import java.util.Scanner;
 
-    text = text.toLowerCase();
+public class Afgb1 {
+  public static boolean isPalindrome(char[] original, char[] reverse){
+    boolean palindrome = false;
+    for(int i = 0; i < original.length; i++){
+      if(original.charAt(i) == reverse.charAt(i)){
+        palindrome = true;
+      }
+    }
+    // text = text.toLowerCase();
     // if('a'<=letter && letter <='z'){
     //   letter += shift;
     //   while(letter > 'z'){
@@ -18,17 +25,20 @@ public class Afgb1 {
     //   letter = ' ';
     // }
     // return letter;
-    char[] charArr = new char[text.length()];
+  }
+  public static String Reverse(String original) {
+    char[] reverse = new char[original.length()];
 
-    for (int f = 0, l = charArr.length - 1; f < l; f++, l--){
-      char temp = charArr[f];
-      charArr[f]  = charArr[l];
-      charArr[l] = temp;
+    for(int k = original.length(); k > 0; k--){
+      reverse += original.charAt(k);
     }
-    return true;
+    return reverse;
   }
   public static void main(String[] args) {
-    String text = new java.util.Scanner(System.in).nextLine();
-    System.out.println(isPalindrom(text));
+    Scanner scan = new Scanner(System.in);
+    int scanlen = scan.next().length();
+    char[] original = new char[scanlen];
+
+    System.out.println(isPalindrome(original));
   }
 }
