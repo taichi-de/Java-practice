@@ -3,42 +3,55 @@ package pr1_blatt5;
 import java.util.Scanner;
 
 public class Afgb1 {
-  public static boolean isPalindrome(char[] original, char[] reverse){
+  public static boolean isPalindrome(char[] originalArr, char[] reverseArr, int len){
     boolean palindrome = false;
-    for(int i = 0; i < original.length; i++){
-      if(original.charAt(i) == reverse.charAt(i)){
+    for(int i = 0, j = len-1; i < j; i++, j--){
+      if(originalArr[i] == reverseArr[len-1-j]){
         palindrome = true;
       }
     }
-    // text = text.toLowerCase();
-    // if('a'<=letter && letter <='z'){
-    //   letter += shift;
-    //   while(letter > 'z'){
-    //     letter -= 26;
-    //   }
-    // }else if('A'<=letter && letter <='Z'){
-    //   letter += shift;
-    //   while(letter > 'Z'){
-    //     letter -= 26;
-    //   }
-    // }else{
-    //   letter = ' ';
-    // }
-    // return letter;
+    return palindrome;
   }
-  public static String Reverse(String original) {
-    char[] reverse = new char[original.length()];
-
-    for(int k = original.length(); k > 0; k--){
-      reverse += original.charAt(k);
+  public static char[] Reverse(char[] originalArr, char[] reverseArr, int len) {
+    for (int f = 0; f < len; f++){
+      reverseArr[len-1-f] = originalArr[f];
     }
-    return reverse;
+    return reverseArr;
   }
+
+  public static boolean isPalindromeRecursive(char[] originalArr, int forward, int backward){
+    if (forward == backward) {
+      return true;
+    }else if ((originalArr[forward]) != (originalArr[backward])) {
+      return false;
+    }else if (forward < backward) { //backward+1 ??
+      return isPalindromeRecursive(originalArr, forward+1, backward-1);
+    }
+    return true;
+  }
+
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    int scanlen = scan.next().length();
-    char[] original = new char[scanlen];
+    String original = scan.next().toLowerCase();
+    char[] originalArr = original.toCharArray();
+    char[] reverseArr = new char[originalArr.length];
+    int len = originalArr.length;
+    // String reverse = String.valueOf(reverseArr);
 
-    System.out.println(isPalindrome(original));
+    /* Iterative */
+    System.out.print(original + " -> ");
+    System.out.println(Reverse(originalArr, reverseArr, len));
+    if(isPalindrome(originalArr, reverseArr, len))
+      System.out.println(original + " ist Palindrom!");
+    else
+      System.out.println(original + " ist nicht Palindrom..");
+
+    /* Recursive */
+    // if(isPalindromeRecursive(originalArr, 0, originalArr.length-1))
+    //   System.out.println(original + " ist Palindrom!");
+    // else
+    //   System.out.println(original + " ist nicht Palindrom..");
+
+    scan.close();
   }
 }
