@@ -24,7 +24,7 @@ public class Afgb1 {
       return true;
     }else if ((originalArr[forward]) != (originalArr[backward])) {
       return false;
-    }else if (forward < backward) { //backward+1 ??
+    }else if (forward < backward) {
       return isPalindromeRecursive(originalArr, forward+1, backward-1);
     }
     return true;
@@ -36,7 +36,6 @@ public class Afgb1 {
     char[] originalArr = original.toCharArray();
     char[] reverseArr = new char[originalArr.length];
     int len = originalArr.length;
-    // String reverse = String.valueOf(reverseArr);
 
     /* Iterative */
     System.out.print(original + " -> ");
