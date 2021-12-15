@@ -24,7 +24,7 @@ public class Afgb1 {
   // 2/3=0.666 -> j=-1
 
 	public static long isFactorialRek(long fact, int k) {
-		if (fact == 1)  return k-1; //?
+		if (fact == 1)  return k-1;
 		if (fact % k != 0) return -1;
 		fact /= k;
 		k++;

@@ -15,18 +15,21 @@ public class Lottofee2 {
 	private byte counter = 0;
 
 	public Lottofee2() {
-		byte [] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49};
+		byte[] arr = new byte[49];
+		for (int i = 0; i < 49; i++){
+			arr[i] = (byte) (i+1);
+		}
 		int l = arr.length;
 
-		zahl1 = (byte) (random.nextInt(49)); // (49) + 1 ???
-		for (int a = 0; a < l; a++) {
+		zahl1 = (byte) (random.nextInt(49)+1); //Wegzug der Duplikate
+		for (int a = 0; a < l; a++) {//zB: zahl1=5
 			if (zahl1 == arr[a]) {
-				arr[a] = arr[l-1];
-				l--;
+				arr[a] = arr[l-1];//arr[1,2,3,4,6,7,,,49,5]
+				l--;//arr[1,2,3,4,6,7,,,,49]
 			}
 		}
 
-		zahl2 = arr[random.nextInt(48)];
+		zahl2 = arr[random.nextInt(48)+1];
 		for (int b = 0; b < l; b++) {
 			if (zahl2 == arr[b]) {
 				arr[b] = arr[l-1];
@@ -34,7 +37,7 @@ public class Lottofee2 {
 			}
 		}
 
-		zahl3 = arr[random.nextInt(47)];
+		zahl3 = arr[random.nextInt(47)+1];
 		for (int c = 0; c < l; c++) {
 			if (zahl3 == arr[c]) {
 				arr[c] = arr[l-1];
@@ -42,14 +45,14 @@ public class Lottofee2 {
 			}
 		}
 
-		zahl4 = arr[random.nextInt(46)];
+		zahl4 = arr[random.nextInt(46)+1];
 		for (int d = 0; d < l; d++) {
 			if (zahl4 == arr[d]) {
 				arr[d] = arr[l-1];
 			}
 		}
 
-		zahl5 = arr[random.nextInt(45)];
+		zahl5 = arr[random.nextInt(45)+1];
 		for (int e = 0; e < l; e++) {
 			if (zahl5 == arr[e]) {
 				arr[e] = arr[l-1];
@@ -57,7 +60,7 @@ public class Lottofee2 {
 			}
 		}
 
-		zahl6 = arr[random.nextInt(44)];
+		zahl6 = arr[random.nextInt(44)+1];
 		for (int f = 0; f < l; f++) {
 			if (zahl6 == arr[f]) {
 				arr[f] = arr[l-1];
@@ -85,8 +88,6 @@ public class Lottofee2 {
 			return zahl6;
 		}else if (counter == 7) {
 			return superZahl;
-		// }else if (counter > 7) { // 必要？
-		// 	return -1;
 		}
 
 		return 1;
