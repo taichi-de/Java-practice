@@ -22,8 +22,8 @@ public class Afgb2 {
 	}
 
 	public static int binaryRek(int[] arr, int first, int last, int num) {
-		while (last >= first) {
-			int arrLen = last-first;
+		while (last >= first) {//-> if
+			int arrLen = last-first;//->windowLen
 			int middle = first+(arrLen/2);
 
 			if (num == arr[middle]) {

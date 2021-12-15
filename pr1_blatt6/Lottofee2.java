@@ -74,7 +74,7 @@ public class Lottofee2 {
 	public byte nextNumber() {
 		counter++;
 
-		if (counter == 1) {
+		if (counter == 1) {//->switch
 			return zahl1;
 		}else if (counter == 2) {
 			return zahl2;
