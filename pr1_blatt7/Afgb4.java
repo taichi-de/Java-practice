@@ -1,3 +1,3 @@
-public class Afgb4 {
+package pr1_blatt7;
 
-}
+public class Afgb4 {}
