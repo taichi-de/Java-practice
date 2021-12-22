@@ -11,4 +11,8 @@ public class random {
     //equal
     //if(str.equals("###")||month == 5){}
   }
+
+  public static int nextInt(int i) {
+    return 0;
+  }
 }

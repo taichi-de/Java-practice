@@ -1,14 +1,13 @@
 package pr1_blatt7;
 
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import java.util.Random;
 
 @SuppressWarnings("serial")
 public class SnakePlayground extends JFrame {
@@ -23,15 +22,14 @@ public class SnakePlayground extends JFrame {
 
 		currentLabel = new JLabel("");
 		maxPoints = new JLabel("");
-        canvas = new DisplayArea(field);
+		canvas = new DisplayArea(field);
 
+		getContentPane().add("Center", canvas);
+		getContentPane().add("North", currentLabel);
+		getContentPane().add("South", maxPoints);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        getContentPane().add("Center", canvas);
-        getContentPane().add("North", currentLabel);
-        getContentPane().add("South", maxPoints);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        this.addKeyListener(new KeyListener() {
+		this.addKeyListener(new KeyListener() {
 
 			@Override
 			public void keyTyped(KeyEvent e) {}
@@ -54,12 +52,11 @@ public class SnakePlayground extends JFrame {
 					break;
 				}
 				System.out.println("New direction: " + nextDirection);
-
 			}
 
 			@Override
 			public void keyReleased(KeyEvent e) {}
-        });
+		});
 
 		Thread t1 = new Thread(() -> {
 			while (true) {
@@ -85,6 +82,7 @@ public class SnakePlayground extends JFrame {
 @SuppressWarnings("serial")
 class DisplayArea extends JPanel {
 	private GameBoard field;
+	private Random random = new Random();
 
 	public DisplayArea(GameBoard field) {
 		this.field = field;
@@ -92,32 +90,31 @@ class DisplayArea extends JPanel {
 
 	protected void paintComponent(Graphics g)  {
 		g.setColor(getBackground());
-    	g.fillRect(0,0,getWidth(),getHeight());
+		g.fillRect(0,0,getWidth(),getHeight());
+		g.setColor(Color.black);
 
-    	g.setColor(Color.black);
+		int squareHeight = getHeight() / field.getRows();
+		int squareWidth  = getWidth() / field.getCols();
 
-    	int squareHeight = getHeight() / field.getRows();
-    	int squareWidth  = getWidth() / field.getCols();
+		int marginHeight = (getHeight() - squareHeight * field.getRows())/2;
+		int marginWidth = (getWidth() - squareWidth * field.getCols())/2;
 
-    	int marginHeight = (getHeight() - squareHeight * field.getRows())/2;
-    	int marginWidth = (getWidth() - squareWidth * field.getCols())/2;
-
-    	for (int x = 0; x != field.getCols(); ++x) {
-    		for (int y = 0; y != field.getRows(); ++y) {
-    			int squareType = field.getFieldContent(x, y);
-    			if (squareType == GameBoard.EMPTY) {
-    				g.setColor(Color.black);
-    				g.drawRect(marginWidth + x*squareWidth, marginHeight + y*squareHeight, squareWidth, squareHeight);
-    				continue;
-    			}
-    			if (squareType == GameBoard.FOOD)
-    				g.setColor(Color.red);
-    			if (squareType == GameBoard.SNAKEHEAD)
-    				g.setColor(Color.black);
-    			if (squareType == GameBoard.SNAKEBODY)
-    				g.setColor(Color.green);
-    			g.fillRect(marginWidth + x*squareWidth, marginHeight + y*squareHeight, squareWidth, squareHeight);
-    		}
-    	}
+		for (int x = 0; x != field.getCols(); ++x) {
+			for (int y = 0; y != field.getRows(); ++y) {
+				int squareType = field.getFieldContent(x, y);
+				if (squareType == GameBoard.EMPTY) {
+					g.setColor(Color.white);
+					g.drawRect(marginWidth + x*squareWidth, marginHeight + y*squareHeight, squareWidth, squareHeight);
+					continue;
+				}
+				if (squareType == GameBoard.FOOD)
+					g.setColor(Color.red);
+				if (squareType == GameBoard.SNAKEHEAD)
+					g.setColor(Color.green);
+				if (squareType == GameBoard.SNAKEBODY)
+					g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
+				g.fillRect(marginWidth + x*squareWidth, marginHeight + y*squareHeight, squareWidth, squareHeight);
+			}
+		}
 	}
 }

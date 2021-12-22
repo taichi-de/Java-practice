@@ -1,6 +1,5 @@
 package pr1_blatt7;
 
-
 public class SnakeGame {
 	public static final int STEP_DELAY = 200;
 	public static final int SIZE_COLS = 20;
