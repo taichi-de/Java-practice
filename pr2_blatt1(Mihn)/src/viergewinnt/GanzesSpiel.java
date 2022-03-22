@@ -8,12 +8,11 @@ public class GanzesSpiel {
 		int spalte = e.setSpalten();
 		System.out.println("Wie viele Reihen?: ");
 		int reihe = e.setReihen();
-		
+
 		Spielbrett feld = new Spielbrett(reihe, spalte);
 		Output drucken = new Drucker(feld);
 		Spieler spieler = Spieler.ERSTER;
-		
-		
+
 		do {
 			System.out.println("In welche Spalte reinlegen?");
 			if(!feld.platzieren(new Spielfigur(spieler), e.getEingabe())) {
@@ -21,25 +20,20 @@ public class GanzesSpiel {
 				continue;
 			}
 			drucken.render();
-			spieler = spieler.getNext(); 
+			spieler = spieler.getNext();
 			if(!CheckWin.checkFour(feld)) {
 				if(spieler.getNext() == Spieler.ERSTER) {
 					System.out.println("O ist dran");
-				}
-				if(spieler.getNext() == Spieler.ZWEITER) {
+				}else{
 					System.out.println("X ist dran");
 				}
 			}
-			
 		}while(!CheckWin.checkFour(feld));
-		
+
 		if(spieler.getNext() == Spieler.ERSTER) {
 			System.out.println("X hat gewonnen!");
-		}
-		if(spieler.getNext() == Spieler.ZWEITER) {
+		}else if(spieler.getNext() == Spieler.ZWEITER) {
 			System.out.println("O hat gewonnen!");
 		}
-		
 	}
-
 }

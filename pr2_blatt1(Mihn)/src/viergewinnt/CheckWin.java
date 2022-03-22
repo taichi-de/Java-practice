@@ -39,10 +39,7 @@ public class CheckWin {
 				counter++;
 			}
 		}
-		if (counter == 3) {
-			return true;
-		}
-
+		if (counter == 3) { return true; }
 		return false;
 	}
 
@@ -63,9 +60,7 @@ public class CheckWin {
 				counter++;
 			}
 		}
-		if (counter == 3) {
-			return true;
-		}
+		if (counter == 3) { return true; }
 		return false;
 	}
 
@@ -84,10 +79,7 @@ public class CheckWin {
 			}
 			j--;
 		}
-		if(counter == 3) {
-			return true;
-		}
-
+		if(counter == 3) { return true; }
 		return false;
 	}
 
@@ -105,9 +97,7 @@ public class CheckWin {
 			}
 			j++;
 		}
-		if(counter == 3) {
-			return true;
-		}
+		if(counter == 3) { return true; }
 		return false;
 	}
 
@@ -126,10 +116,7 @@ public class CheckWin {
 			}
 			j++;
 		}
-		if(counter == 3) {
-			return true;
-		}
-
+		if(counter == 3) { return true; }
 		return false;
 	}
 
@@ -147,10 +134,7 @@ public class CheckWin {
 			}
 			j--;
 		}
-		if(counter == 3) {
-			return true;
-		}
-
+		if(counter == 3) { return true; }
 		return false;
 	}
 }

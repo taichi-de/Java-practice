@@ -2,11 +2,11 @@ package viergewinnt;
 
 public class Drucker implements Output{
 	private Spielbrett feld;
-	
+
 	public Drucker(Spielbrett feld) {
 		this.feld = feld;
 	}
-	
+
 	public void render() {
 		for(int y = feld.getReihen()-1; y >= 0; y--) {
 			for(int x = 0; x < feld.getSpalten(); x++) {
@@ -15,8 +15,8 @@ public class Drucker implements Output{
 					System.out.print(figur.getZeichen());
 				}else {
 					System.out.print("-");
-				}		
-			} 
+				}
+			}
 			System.out.println(" ");
 		}
 		for(int i = 0; i < feld.getSpalten(); i++) {
@@ -24,6 +24,4 @@ public class Drucker implements Output{
 		}
 		System.out.println(" ");
 	}
-	 
-	
 }
