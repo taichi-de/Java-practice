@@ -1,0 +1,37 @@
+@startuml blatt7
+'opt + D to start
+'cmp+p >PlantUML: Export Current Diagram
+
+skinparam classAttributeIconSize 0
+scale 2
+
+title Blatt7.1
+
+class Kunde {
+    - email: string
+    - password: string
+    - guthaben: int
+
+    + anmelden(mail: String, password: String): void
+    + ausleihen(): void
+}
+
+' class Film {
+'     - name: String
+'     - preis: int
+
+'     ' - sprachenList(sprache: String, untertitle: String): void
+' }
+class Test {
+    - email: string
+}
+
+' class streamingService {
+'     ' + generieren(film: Film, zeit: int, link: String): void
+' }
+
+' Kunde "1" *-- "n" Film
+Kunde "1" *-- "n" Test
+' Kunde "1" *-- "n" streamingService
+
+@enduml

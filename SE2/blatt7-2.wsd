@@ -1,0 +1,25 @@
+@startuml blatt7
+scale 2
+
+title Blatt7.2
+
+activate Kunde
+activate Videotheke
+Kunde ->  Videotheke: anmelden(Email, Password)
+
+alt Pwd prüfen
+    Videotheke --> Videotheke : Pwd prüfen
+
+    alt Pwd !== korrekt
+        Kunde -> Videotheke : eine erneute Eingabe des Passworts an
+        Videotheke --> Videotheke : Pwd prüfen
+
+    else
+        Kunde <- Videotheke : Passwort-Reset Link senden
+    end
+end
+
+deactivate Kunde
+deactivate Videotheke
+
+@enduml
